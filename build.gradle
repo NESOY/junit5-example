@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'com.nesoy'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
