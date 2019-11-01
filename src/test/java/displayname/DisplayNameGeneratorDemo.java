@@ -6,15 +6,27 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.lang.reflect.Method;
 
-
+/*
+ *  Junit5에서는 Display Name을 유연하게 생성할 수 있다.
+ */
 class DisplayNameGeneratorDemo {
+    /*
+     * DisplayNameGenerator.Standard
+     * DisplayNameGenerator.ReplaceUnderscores -- '_'를 Space로 변경
+     * 기본적으로 Method 이름만 적용
+     * DisplayName, ParameterizedTest에는 적용되지 않음.
+     */
 
     @Nested
     @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
     class A_year_is_not_supported {
-
         @Test
         void if_it_is_zero() {
+        }
+
+        @Test
+        @DisplayName("if_it_is_one")
+        void if_it_is_one() {
         }
 
         @DisplayName("A negative value for year is not supported by the leap year computation.")
@@ -22,9 +34,11 @@ class DisplayNameGeneratorDemo {
         @ValueSource(ints = { -1, -4 })
         void if_it_is_negative(int year) {
         }
-
     }
 
+    /*
+     * Custom TestCase Name 생성자도 만들 수 있음.
+     */
     @Nested
     @DisplayNameGeneration(IndicativeSentences.class)
     class A_year_is_a_leap_year {
@@ -41,7 +55,6 @@ class DisplayNameGeneratorDemo {
     }
 
     static class IndicativeSentences extends DisplayNameGenerator.ReplaceUnderscores {
-
         @Override
         public String generateDisplayNameForClass(Class<?> testClass) {
             return super.generateDisplayNameForClass(testClass);
@@ -58,10 +71,4 @@ class DisplayNameGeneratorDemo {
             return name.replace('_', ' ') + '.';
         }
     }
-
-    /*
-    - Display Generator로 표기 방법 자동화할 수 있음.
-    - 변수를 다양하게 넣을 수 있고 변수에 해당하는 테스트 이름까지 자동화할 수 있음.
-    - Replace로 변경 가능
-     */
 }

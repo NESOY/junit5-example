@@ -5,12 +5,23 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-class StandardTest {
 
+/**
+ * Annotation Naming이 변경됨
+ */
+class StandardTest {
+    /**
+     * junit 4 - @BeforeClass
+     * junit 5 - @BeforeAll
+     */
     @BeforeAll
     static void initAll() {
     }
 
+    /**
+     * junit 4 - @Before
+     * junit 5 - @BeforeEach
+     */
     @BeforeEach
     void init() {
     }
@@ -22,11 +33,12 @@ class StandardTest {
     @Test
     void failingTest() {
         fail("a failing test");
-        /*
-        실패하면 자동 결과물 생성 - html 파일로
-         */
     }
 
+    /**
+     * junit 4 - @Ignore
+     * junit 5 - @Disabled
+     */
     @Test
     @Disabled("for demonstration purposes")
     void skippedTest() {
@@ -39,12 +51,19 @@ class StandardTest {
         fail("test should have been aborted");
     }
 
+    /**
+     * junit 4 - @After
+     * junit 5 - @AfterEach
+     */
     @AfterEach
     void tearDown() {
     }
 
+    /**
+     * junit 4 - @AfterClass
+     * junit 5 - @AfterAll
+     */
     @AfterAll
     static void tearDownAll() {
     }
-
 }
