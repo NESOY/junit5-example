@@ -7,11 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static test_info.RandomParametersExtension.Random;
 
-/*
- Mockito
- - https://github.com/mockito/mockito/blob/release/2.x/subprojects/junit-jupiter/src/main/java/org/mockito/junit/jupiter/MockitoExtension.java
- Spring
- - https://github.com/spring-projects/spring-framework/blob/master/spring-test/src/main/java/org/springframework/test/context/junit/jupiter/SpringExtension.java
+/**
+ * {@link RandomParametersExtension}
+ * Others Extensions
+ * Mockito
+ * - https://github.com/mockito/mockito/blob/release/2.x/subprojects/junit-jupiter/src/main/java/org/mockito/junit/jupiter/MockitoExtension.java
+ * Spring
+ * - https://github.com/spring-projects/spring-framework/blob/master/spring-test/src/main/java/org/springframework/test/context/junit/jupiter/SpringExtension.java
  */
 @ExtendWith(RandomParametersExtension.class)
 class ExtendWithTest {

@@ -7,7 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("TestInfo Demo")
 class TestInfoTest {
-
+    /**
+     * Test 관련 정보를 주입 받을 수 있다.
+     * {@link TestInfo#getDisplayName}
+     * {@link TestInfo#getTags}
+     * {@link TestInfo#getTestClass}
+     * {@link TestInfo#getTestMethod}
+     */
     TestInfoTest(TestInfo testInfo) {
         assertEquals("TestInfo Demo", testInfo.getDisplayName());
     }
@@ -25,9 +31,4 @@ class TestInfoTest {
         assertEquals("TEST 1", testInfo.getDisplayName());
         assertTrue(testInfo.getTags().contains("my-tag"));
     }
-
-    @Test
-    void test2() {
-    }
-
 }
