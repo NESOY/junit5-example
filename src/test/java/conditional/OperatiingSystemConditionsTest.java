@@ -11,6 +11,9 @@ import java.lang.annotation.Target;
 
 import static org.junit.jupiter.api.condition.OS.*;
 
+/**
+ * 운영체재에 따라 전용테스트 작성 가능
+ */
 public class OperatiingSystemConditionsTest {
     @Test
     @EnabledOnOs({MAC, LINUX})

@@ -1,4 +1,4 @@
-package parameterized;
+package domain;
 
 public enum City {
     SEOUL,

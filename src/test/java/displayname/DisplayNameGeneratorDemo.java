@@ -6,17 +6,16 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.lang.reflect.Method;
 
-/*
+/**
  *  Junit5에서는 Display Name을 유연하게 생성할 수 있다.
  */
 class DisplayNameGeneratorDemo {
-    /*
+    /**
      * DisplayNameGenerator.Standard
      * DisplayNameGenerator.ReplaceUnderscores -- '_'를 Space로 변경
      * 기본적으로 Method 이름만 적용
      * DisplayName, ParameterizedTest에는 적용되지 않음.
      */
-
     @Nested
     @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
     class A_year_is_not_supported {
@@ -36,7 +35,7 @@ class DisplayNameGeneratorDemo {
         }
     }
 
-    /*
+    /**
      * Custom TestCase Name 생성자도 만들 수 있음.
      */
     @Nested

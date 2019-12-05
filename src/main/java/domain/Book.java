@@ -1,4 +1,4 @@
-package parameterized;
+package domain;
 
 public class Book {
     private final String title;

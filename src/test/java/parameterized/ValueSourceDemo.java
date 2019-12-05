@@ -1,5 +1,6 @@
 package parameterized;
 
+import domain.Book;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.converter.JavaTimeConversionPattern;

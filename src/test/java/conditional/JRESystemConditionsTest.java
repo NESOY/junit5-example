@@ -6,6 +6,9 @@ import org.junit.jupiter.api.condition.EnabledOnJre;
 
 import static org.junit.jupiter.api.condition.JRE.*;
 
+/**
+ * Java의 Version에 따라 테스트 작성도 가능
+ */
 public class JRESystemConditionsTest {
     @Test
     @EnabledOnJre(JAVA_8)
