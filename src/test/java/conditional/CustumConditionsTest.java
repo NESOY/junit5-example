@@ -1,6 +1,7 @@
 package conditional;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.JRE;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 import java.lang.annotation.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -20,6 +22,7 @@ import static org.junit.jupiter.api.extension.ConditionEvaluationResult.disabled
 import static org.junit.jupiter.api.extension.ConditionEvaluationResult.enabled;
 import static org.junit.platform.commons.util.AnnotationUtils.findAnnotation;
 
+@DisplayNameGeneration(AnnotationDisplayNameGenerator.class)
 public class CustumConditionsTest {
 
     /**
@@ -28,7 +31,6 @@ public class CustumConditionsTest {
     @Test
     @EnabledOnJre(JRE.JAVA_8)
     @EnabledOnJavaVmVendor(AdoptOpenJDK)
-    @DisplayName("JAVA_8, AdoptJDK에서 동작하는 테스트")
     public void testConditionsDemo(){
         assertTrue(1==1);
     }
@@ -36,7 +38,6 @@ public class CustumConditionsTest {
     @Test
     @EnabledOnJre(JRE.JAVA_8)
     @EnabledOnJavaVmVendor(OracleJDK)
-    @DisplayName("JAVA_8, OracleJDK에서 동작하는 테스트")
     public void testConditionsDemo2(){
         assertTrue(1==1);
     }
@@ -64,6 +65,7 @@ class EnabledOnJavaVmVendorCondition implements ExecutionCondition {
         return ENABLED_BY_DEFAULT;
     }
 }
+
 
 
 @Target({ ElementType.TYPE, ElementType.METHOD })
@@ -96,5 +98,25 @@ enum JAVA_VENDOR {
         }
 
         return null;
+    }
+}
+
+
+class AnnotationDisplayNameGenerator extends DisplayNameGenerator.ReplaceUnderscores {
+    @Override
+    public String generateDisplayNameForClass(Class<?> testClass) {
+        return super.generateDisplayNameForClass(testClass);
+    }
+
+    @Override
+    public String generateDisplayNameForNestedClass(Class<?> nestedClass) {
+        return super.generateDisplayNameForNestedClass(nestedClass) + "...";
+    }
+
+    @Override
+    public String generateDisplayNameForMethod(Class<?> testClass, Method testMethod) {
+        return testMethod.getAnnotation(EnabledOnJre.class).value()[0].toString() + " "
+                + testMethod.getAnnotation(EnabledOnJavaVmVendor.class).value()[0].toString()
+                + "에서 동작하는 테스트";
     }
 }

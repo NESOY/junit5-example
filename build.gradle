@@ -18,7 +18,10 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        includeTags 'integration', 'feature-168'
+        excludeTags 'slow'
+    }
     testLogging {
         events "passed", "skipped", "failed"
     }
