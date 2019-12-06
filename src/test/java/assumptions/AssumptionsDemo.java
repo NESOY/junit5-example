@@ -36,6 +36,7 @@ class AssumptionsDemo {
      */
     @Test
     void testInAllEnvironments() {
+        //System.setProperty("ENV", "CI");
         assumingThat("CI".equals(System.getenv("ENV")), () -> assertEquals(2, calculator.divide(4, 2)));
 
         assertEquals(42, calculator.multiply(6, 7));
