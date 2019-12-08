@@ -43,15 +43,13 @@ public class CustumConditionsTest {
     }
 }
 
-
+/**
+ * Custom JavaVM Vendor Condition
+ */
 class EnabledOnJavaVmVendorCondition implements ExecutionCondition {
     private static final ConditionEvaluationResult ENABLED_BY_DEFAULT = enabled("@EnabledOnJavaVmVendor is not present");
-
-    static final ConditionEvaluationResult ENABLED_ON_CURRENT_JAVA_VENDOR =
-            enabled("Enabled on JRE version: " + System.getProperty("java.vm.vendor"));
-
-    static final ConditionEvaluationResult DISABLED_ON_CURRENT_JAVA_VENDOR =
-            disabled("Disabled on JRE version: " + System.getProperty("java.vm.vendor"));
+    static final ConditionEvaluationResult ENABLED_ON_CURRENT_JAVA_VENDOR = enabled("Enabled on JRE version: " + System.getProperty("java.vm.vendor"));
+    static final ConditionEvaluationResult DISABLED_ON_CURRENT_JAVA_VENDOR = disabled("Disabled on JRE version: " + System.getProperty("java.vm.vendor"));
 
     @Override
     public ConditionEvaluationResult evaluateExecutionCondition(ExtensionContext context) {
@@ -67,7 +65,9 @@ class EnabledOnJavaVmVendorCondition implements ExecutionCondition {
 }
 
 
-
+/**
+ * Custom Interface
+ */
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -76,6 +76,9 @@ class EnabledOnJavaVmVendorCondition implements ExecutionCondition {
     JAVA_VENDOR[] value();
 }
 
+/**
+ * Test Enum
+ */
 enum JAVA_VENDOR {
     AdoptOpenJDK("AdoptOpenJDK"),
     OracleJDK("OracleJDK");
@@ -102,6 +105,10 @@ enum JAVA_VENDOR {
 }
 
 
+/**
+ * 매번 테스트 이름을 작성하는게 귀찮으니 자동으로 할 수는 없을까?
+ * -> DisplayNameGenerator를 사용해보자.
+ */
 class AnnotationDisplayNameGenerator extends DisplayNameGenerator.ReplaceUnderscores {
     @Override
     public String generateDisplayNameForClass(Class<?> testClass) {

@@ -11,8 +11,8 @@ import java.lang.reflect.Method;
  */
 class DisplayNameGeneratorDemo {
     /**
-     * DisplayNameGenerator.Standard
-     * DisplayNameGenerator.ReplaceUnderscores -- '_'를 Space로 변경
+     * {@link DisplayNameGenerator.Standard}
+     * {@link DisplayNameGenerator.ReplaceUnderscores} -- '_'를 Space로 변경
      * 기본적으로 Method 이름만 적용
      * DisplayName, ParameterizedTest에는 적용되지 않음.
      */

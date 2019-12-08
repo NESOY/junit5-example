@@ -19,6 +19,9 @@ public class CsvSourceDemo {
         assertNotEquals(0, rank);
     }
 
+    /**
+     * 파일도 읽어서 테스트 파일도 제공 가능
+     */
     @ParameterizedTest
     @CsvFileSource(resources = "/two-column.csv", numLinesToSkip = 1)
     void testWithCsvFileSource(String country, int reference) {

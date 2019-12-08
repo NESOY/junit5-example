@@ -7,6 +7,7 @@ import org.junit.jupiter.params.converter.JavaTimeConversionPattern;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.support.AnnotationConsumer;
 
 import java.time.LocalDate;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,17 @@ public class ValueSourceDemo {
         assertEquals("42 Cats", book.getTitle());
     }
 
+    /**
+     * Spring의 Converter와 비슷해보인다.
+     * 인터페이스 {@link AnnotationConsumer} 구현하면 Annotation으로도 적용가능
+     */
+    class ToStringArgumentConverter extends SimpleArgumentConverter {
+        @Override
+        protected Object convert(Object source, Class<?> targetType) {
+            assertEquals(String.class, targetType, "Can only convert to String");
+            return String.valueOf(source);
+        }
+    }
     @ParameterizedTest
     @EnumSource(TimeUnit.class)
     void testWithExplicitArgumentConversion(@ConvertWith(ToStringArgumentConverter.class) String argument) {
@@ -45,22 +57,13 @@ public class ValueSourceDemo {
         assertNotNull(TimeUnit.valueOf(argument));
     }
 
+    /**
+     * {@link AnnotationConsumer} 적용한 예
+     */
     @ParameterizedTest
     @ValueSource(strings = { "01.01.2017", "31.12.2017" })
     void testWithExplicitJavaTimeConverter(@JavaTimeConversionPattern("dd.MM.yyyy") LocalDate argument) {
 
         assertEquals(2017, argument.getYear());
-    }
-}
-
-/**
- * Spring의 Converter와 비슷해보인다.
- */
-class ToStringArgumentConverter extends SimpleArgumentConverter {
-
-    @Override
-    protected Object convert(Object source, Class<?> targetType) {
-        assertEquals(String.class, targetType, "Can only convert to String");
-        return String.valueOf(source);
     }
 }

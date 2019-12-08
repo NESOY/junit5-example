@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 @DisplayName("A special test case")
 class DisplayNameDemo {
-    /*
+    /**
      * space 공간도 가능
      */
     @Test
