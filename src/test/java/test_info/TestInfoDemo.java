@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("TestInfo Demo")
-class TestInfoTest {
+class TestInfoDemo {
     /**
      * Test 관련 정보를 주입 받을 수 있다.
      * {@link TestInfo#getDisplayName}
@@ -14,7 +14,7 @@ class TestInfoTest {
      * {@link TestInfo#getTestClass}
      * {@link TestInfo#getTestMethod}
      */
-    TestInfoTest(TestInfo testInfo) {
+    TestInfoDemo(TestInfo testInfo) {
         assertEquals("TestInfo Demo", testInfo.getDisplayName());
     }
 

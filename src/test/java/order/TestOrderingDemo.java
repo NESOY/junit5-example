@@ -3,11 +3,12 @@ package order;
 import org.junit.jupiter.api.*;
 
 /**
+ * 테스트 순서를 조정할 수 있다
  * {@link MethodOrderer.OrderAnnotation}
  * {@link MethodOrderer.Alphanumeric}
  * {@link MethodOrderer.Random}
  */
-public class TestOrderingTest {
+public class TestOrderingDemo {
         @Nested
         @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
         class TestMethodOdering {

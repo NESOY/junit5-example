@@ -1,10 +1,19 @@
 ## JUnit5 Tutorial
 
-### Main Feature
-- [assertThat Dependency 없음](https://github.com/junit-team/junit5/issues/147)
-    - Hamcrest
-    - AssertJ
-- Kotlin Support
+## Requirements
+- Java8
+
+## [Architecture](https://brunch.co.kr/@springboot/77)
+- Platform
+    - 테스트를 실행해주는 런처 제공. TestEngine API 제공.
+    - Maven / Gradle Plugins, JUnit4 Runner
+- Jupiter
+    - JUnit 5를 지원하는 TestEngine API 구현체
+- Vintage 
+    - JUnit 4와 3을 지원하는 TestEngine API 구현체
+
+## Support JUnit 5 in SpringBoot
+- [SpringBoot 2.2에서는 JUnit 5 지원](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#junit-5)
 
 ## [Index](https://github.com/NESOY/junit5-example/tree/master/src/test/java)
 - [Standard](https://github.com/NESOY/junit5-example/tree/master/src/test/java/standard)
@@ -38,4 +47,5 @@
 
 ### Reference
 - <https://junit.org/junit5/docs/current/user-guide/>
-- <https://brunch.co.kr/@springboot/77>
+
+- [assertThat Dependency 없음(Hamcrest, AssertJ)](https://github.com/junit-team/junit5/issues/147)

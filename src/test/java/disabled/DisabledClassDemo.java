@@ -15,9 +15,6 @@ class DisabledClassDemo {
     void testWillBeSkipped() {
     }
 
-    /*
-     * 실패한 테스트 케이스는 실패가 되지않는다..?
-     */
     @Test
     public void failTestisNotSkipped(){
         assertEquals(1,2);

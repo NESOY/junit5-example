@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 
 /**
- * Annotation Naming이 변경됨
+ * Annotation Naming이 변경되었습니다.
  */
-class StandardTest {
+class StandardDemo {
     /**
      * junit 4 - @BeforeClass
      * junit 5 - @BeforeAll

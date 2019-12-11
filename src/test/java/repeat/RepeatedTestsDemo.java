@@ -6,6 +6,13 @@ import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+/**
+ * 반복테스트도 지원합니다.
+ * 테스트 DisplayName도 쉽게 변수로 표현가능
+ * 멱등성 테스트할때 좋을거 같음
+ * 멱등성 - https://brunch.co.kr/@artiveloper/18
+ */
 class RepeatedTestsDemo {
     private Logger logger = Logger.getLogger(RepeatedTestsDemo.class.getName());
 

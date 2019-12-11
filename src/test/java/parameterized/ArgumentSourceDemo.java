@@ -96,6 +96,7 @@ public class ArgumentSourceDemo {
     @AggregateWith(PersonAggregator.class)
     public @interface CsvToPerson {
     }
+
     class PersonAggregator implements ArgumentsAggregator {
         @Override
         public Person aggregateArguments(ArgumentsAccessor arguments, ParameterContext context) {

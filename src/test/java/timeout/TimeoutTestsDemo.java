@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Timeout;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * assert문뿐만 아니라 Annotation을 지원
+ * assertTimeout
+ */
 class TimeoutTestsDemo {
 
     @BeforeEach
@@ -19,5 +23,4 @@ class TimeoutTestsDemo {
     void failsIfExecutionTimeExceeds100Milliseconds() {
         // fails if execution time exceeds 100 milliseconds
     }
-
 }

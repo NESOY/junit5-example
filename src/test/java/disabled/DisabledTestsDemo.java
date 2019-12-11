@@ -10,6 +10,9 @@ class DisabledTestsDemo {
     void testWillBeSkipped() {
     }
 
+    /**
+     * 해당 테스트는 실행됩니다.
+     */
     @Test
     void testWillBeExecuted() {
     }
