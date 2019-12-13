@@ -36,8 +36,12 @@ class AssumptionsDemo {
      */
     @Test
     void testInAllEnvironments() {
-        //System.setProperty("ENV", "CI");
-        assumingThat("CI".equals(System.getenv("ENV")), () -> assertEquals(2, calculator.divide(4, 2)));
+        // env, property의 차이점은?
+        System.out.println(System.getenv());
+//        System.setProperty("ENV", "CI");
+        assumingThat("CI".equals(System.getProperty("ENV")), () -> {
+            assertEquals(4, calculator.divide(4, 2));
+        });
 
         assertEquals(42, calculator.multiply(6, 7));
     }

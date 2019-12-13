@@ -31,7 +31,7 @@ public class ArgumentSourceDemo {
      * Test Fixture와 비슷한 역할
      * 재사용성이 매우 높은게 특징
      */
-    class MyArgumentsProvider implements ArgumentsProvider {
+    static class MyArgumentsProvider implements ArgumentsProvider {
         @Override
         public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
             return Stream.of("apple", "banana").map(Arguments::of);

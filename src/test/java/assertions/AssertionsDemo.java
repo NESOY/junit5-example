@@ -122,6 +122,7 @@ class AssertionsDemo {
      * 시간 제한 테스트를 실패하는 경우
      * -> 얼마나 초과했는지 Report
      * execution exceeded timeout of 10 ms by 90 ms
+     * 끝까지 돌려보고 결과 Reporting
      */
     @Test
     void timeoutExceeded() {

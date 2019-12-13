@@ -20,6 +20,7 @@ class ExtendWithTest {
 
     @Test
     void injectsInteger(@Random int i, @Random int j) {
+        System.out.println(i + " " + j);
         assertNotEquals(i, j);
     }
 

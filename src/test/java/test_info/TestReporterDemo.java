@@ -33,6 +33,7 @@ class TestReporterDemo {
     /**
      * OUTPUT
      * timestamp = 2019-12-02T17:30:41.893, user name = dk38, award year = 1974
+     * fitness
      */
     @Test
     void reportMultipleKeyValuePairs(TestReporter testReporter) {

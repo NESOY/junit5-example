@@ -3,7 +3,7 @@
 ## Requirements
 - Java8
 
-## [Architecture](https://brunch.co.kr/@springboot/77)
+## [Architecture](https://github.com/junit-team/junit5-workshop/blob/master/slides/05_modularization/modularization.md)
 - Platform
     - 테스트를 실행해주는 런처 제공. TestEngine API 제공.
     - Maven / Gradle Plugins, JUnit4 Runner
@@ -38,6 +38,9 @@
 - extention Model
 - TestTemplate
 - Parrallel
+- 4 / 5 동시에 돌릴 수 있을까?
+- JUnit4 -> 5 Migration Guide
+- Junit4 Naming Test
 
 ## 궁금
 - Converter
@@ -47,5 +50,5 @@
 
 ### Reference
 - <https://junit.org/junit5/docs/current/user-guide/>
-
+- <https://brunch.co.kr/@springboot/77>
 - [assertThat Dependency 없음(Hamcrest, AssertJ)](https://github.com/junit-team/junit5/issues/147)

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 /**
@@ -33,8 +34,14 @@ class RepeatedTestsDemo {
     void repeatedTest() {
     }
 
+    /**
+     * 중간에 실패해도 전체실행
+     */
     @RepeatedTest(5)
     void repeatedTestWithRepetitionInfo(RepetitionInfo repetitionInfo) {
+        if(repetitionInfo.getCurrentRepetition() == 3){
+            fail();
+        }
         assertEquals(5, repetitionInfo.getTotalRepetitions());
     }
 

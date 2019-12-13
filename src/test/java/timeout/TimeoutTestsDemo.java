@@ -18,9 +18,13 @@ class TimeoutTestsDemo {
         // fails if execution time exceeds 5 seconds
     }
 
+    /**
+     * 기다리지 않고 Error
+     */
     @Test
     @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
-    void failsIfExecutionTimeExceeds100Milliseconds() {
+    void failsIfExecutionTimeExceeds100Milliseconds() throws InterruptedException {
+        Thread.sleep(1000);
         // fails if execution time exceeds 100 milliseconds
     }
 }
