@@ -1,4 +1,4 @@
-package test_info;
+package extension_model;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;

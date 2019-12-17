@@ -12,9 +12,6 @@
 - Vintage 
     - JUnit 4와 3을 지원하는 TestEngine API 구현체
 
-## Support JUnit 5 in SpringBoot
-- [SpringBoot 2.2에서는 JUnit 5 지원](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#junit-5)
-
 ## [Index](https://github.com/NESOY/junit5-example/tree/master/src/test/java)
 - [Standard](https://github.com/NESOY/junit5-example/tree/master/src/test/java/standard)
 - [Assertions](https://github.com/NESOY/junit5-example/tree/master/src/test/java/assertions)
@@ -33,13 +30,64 @@
 - [dynamic_test](https://github.com/NESOY/junit5-example/tree/master/src/test/java/dynamic_test)
 - [parallel](https://github.com/NESOY/junit5-example/tree/master/src/test/java/parallel)
 
+## JUnit4 Migration Guide
+> JUnit 4 & JUnit 5 동시에 할 수 없을까?
+- [Migration Sample](https://github.com/junit-team/junit5-samples#migration-samples)
+
+#### [Maven](https://github.com/junit-team/junit5-samples/blob/master/junit5-migration-maven)
+```xml
+<dependencies>
+        <!--  JUnit5  -->
+        <dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <!--  JUnit4  -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${junit.vintage.version}</version>
+			<scope>test</scope>
+		</dependency>
+</dependencies>
+```
+
+#### [Gradle](https://github.com/junit-team/junit5-samples/tree/master/junit5-migration-gradle)
+```gradle
+dependencies {
+    // JUnit 5
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+
+    // JUnit 4
+    testImplementation("junit:junit:4.12")
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.5.2"
+}
+```
+
+
+## JUnit5 Testing in IDE 
+- [Intellij](https://blog.jetbrains.com/idea/2016/08/using-junit-5-in-intellij-idea/)
+- [vscode](https://code.visualstudio.com/docs/java/java-testing)
+
+
 ## 추가해야할 점
 - dynamic Test
-- extention Model
 - TestTemplate
-- Parrallel
-- 4 / 5 동시에 돌릴 수 있을까?
-- JUnit4 -> 5 Migration Guide
 - Junit4 Naming Test
 
 ## 궁금
@@ -50,5 +98,6 @@
 
 ### Reference
 - <https://junit.org/junit5/docs/current/user-guide/>
-- <https://brunch.co.kr/@springboot/77>
 - [assertThat Dependency 없음(Hamcrest, AssertJ)](https://github.com/junit-team/junit5/issues/147)
+- [Support JUnit 5 in SpringBoot Version 2.2](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#junit-5)
+- [JUnit5 in Spring - Eddy Kim님](https://brunch.co.kr/@springboot/77)

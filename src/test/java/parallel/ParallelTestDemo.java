@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ResourceLock;
+import org.junit.jupiter.api.parallel.Resources;
 
 import java.util.Properties;
 
@@ -16,6 +17,7 @@ import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
 
 /**
+ * @link https://junit.org/junit5/docs/current/user-guide/#writing-tests-parallel-execution
  * @version experimental
  */
 @Execution(CONCURRENT)
@@ -34,6 +36,13 @@ class SharedResourcesDemo {
         System.setProperties(backup);
     }
 
+    /**
+     * {@link Resources#SYSTEM_PROPERTIES}
+     * {@link Resources#SYSTEM_OUT}
+     * {@link Resources#SYSTEM_ERR}
+     * {@link Resources#LOCALE}
+     * {@link Resources#TIME_ZONE}
+     */
     @Test
     @ResourceLock(value = SYSTEM_PROPERTIES, mode = READ)
     void customPropertyIsNotSetByDefault() {

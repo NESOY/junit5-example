@@ -35,7 +35,7 @@ class RepeatedTestsDemo {
     }
 
     /**
-     * 중간에 실패해도 전체실행
+     * 중간에 실패해도 전체실행하는 것을 확인할 수 있다.
      */
     @RepeatedTest(5)
     void repeatedTestWithRepetitionInfo(RepetitionInfo repetitionInfo) {

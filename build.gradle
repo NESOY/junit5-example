@@ -13,8 +13,13 @@ repositories {
 
 dependencies {
     testCompile("org.assertj:assertj-core:3.11.1")
+    // JUnit 5
     testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+
+    // JUnit 4
+    testImplementation("junit:junit:4.12")
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.5.2"
 }
 
 test {

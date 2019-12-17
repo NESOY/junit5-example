@@ -1,11 +1,11 @@
-package test_info;
+package extension_model;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static extension_model.RandomParametersExtension.Random;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static test_info.RandomParametersExtension.Random;
 
 /**
  * {@link RandomParametersExtension}
@@ -28,5 +28,4 @@ class ExtendWithTest {
     void injectsDouble(@Random double d) {
         assertEquals(0.0, d, 1.0);
     }
-
 }

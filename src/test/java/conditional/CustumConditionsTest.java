@@ -45,6 +45,8 @@ public class CustumConditionsTest {
 
 /**
  * Custom JavaVM Vendor Condition
+ * {@link ConditionEvaluationResult#enabled(String)}
+ * {@link ConditionEvaluationResult#disabled(String)}
  */
 class EnabledOnJavaVmVendorCondition implements ExecutionCondition {
     private static final ConditionEvaluationResult ENABLED_BY_DEFAULT = enabled("@EnabledOnJavaVmVendor is not present");
@@ -109,7 +111,7 @@ enum JAVA_VENDOR {
  * 매번 테스트 이름을 작성하는게 귀찮으니 자동으로 할 수는 없을까?
  * -> DisplayNameGenerator를 사용해보자.
  */
-class AnnotationDisplayNameGenerator extends DisplayNameGenerator.ReplaceUnderscores {
+class AnnotationDisplayNameGenerator extends DisplayNameGenerator.Standard {
     @Override
     public String generateDisplayNameForClass(Class<?> testClass) {
         return super.generateDisplayNameForClass(testClass);
