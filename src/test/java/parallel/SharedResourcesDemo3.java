@@ -3,6 +3,7 @@ package parallel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.jupiter.api.parallel.Resources;
 
@@ -10,16 +11,13 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
 
-/**
- * @link https://junit.org/junit5/docs/current/user-guide/#writing-tests-parallel-execution
- * ForkJoinPool에서 진행
- * @version experimental
- */
-class SharedResourcesDemo {
+@Execution(CONCURRENT)
+class SharedResourcesDemo3 {
 
     private Properties backup;
 

@@ -33,10 +33,11 @@ class AssumptionsDemo {
 
     /**
      * 통합환경 TEST + CI 전용 테스트 작성도 가능
+     * env - System에 의존적
+     * property - JVM 환경에 의존적
      */
     @Test
     void testInAllEnvironments() {
-        // env, property의 차이점은?
         System.out.println(System.getenv());
 //        System.setProperty("ENV", "CI");
         assumingThat("CI".equals(System.getProperty("ENV")), () -> {

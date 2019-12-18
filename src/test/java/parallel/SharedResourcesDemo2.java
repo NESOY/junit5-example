@@ -14,12 +14,7 @@ import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ;
 import static org.junit.jupiter.api.parallel.ResourceAccessMode.READ_WRITE;
 import static org.junit.jupiter.api.parallel.Resources.SYSTEM_PROPERTIES;
 
-/**
- * @link https://junit.org/junit5/docs/current/user-guide/#writing-tests-parallel-execution
- * ForkJoinPool에서 진행
- * @version experimental
- */
-class SharedResourcesDemo {
+class SharedResourcesDemo2 {
 
     private Properties backup;
 
