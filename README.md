@@ -79,22 +79,9 @@ dependencies {
 }
 ```
 
-
 ## JUnit5 Testing in IDE 
 - [Intellij](https://blog.jetbrains.com/idea/2016/08/using-junit-5-in-intellij-idea/)
 - [vscode](https://code.visualstudio.com/docs/java/java-testing)
-
-
-## 추가해야할 점
-- dynamic Test
-- TestTemplate
-- Junit4 Naming Test
-
-## 궁금
-- Converter
-- ArgumentsAggregator
-- ArgumentsProvider
-- 차이점.
 
 ### Reference
 - <https://junit.org/junit5/docs/current/user-guide/>
