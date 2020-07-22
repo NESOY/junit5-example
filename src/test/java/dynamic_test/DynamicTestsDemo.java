@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
  * DynamicTest는 RunTime에 Test를 생성하고 실행합니다.
  * @TestFactory Annotation으로 테스트를 동적으로 생성합니다.
  * Javascript - Test Fixture
+ * Repeat 테스트
  */
 class DynamicTestsDemo {
 

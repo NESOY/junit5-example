@@ -32,6 +32,4 @@ class DisplayNameDemo {
     @DisplayName("😱")
     void testWithDisplayNameContainingEmoji() {
     }
-
-
 }

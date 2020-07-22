@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  * 테스트 DisplayName도 쉽게 변수로 표현가능
  * 멱등성 테스트할때 좋을거 같음
  * 멱등성 - https://brunch.co.kr/@artiveloper/18
+ * 소켓여러번 열때 / Thread 열때
  */
 class RepeatedTestsDemo {
     private Logger logger = Logger.getLogger(RepeatedTestsDemo.class.getName());
@@ -45,7 +46,7 @@ class RepeatedTestsDemo {
         assertEquals(5, repetitionInfo.getTotalRepetitions());
     }
 
-    @RepeatedTest(value = 1, name = "{displayName} {currentRepetition}/{totalRepetitions}")
+    @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}")
     @DisplayName("Repeat!")
     void customDisplayName(TestInfo testInfo) {
         assertEquals("Repeat! 1/1", testInfo.getDisplayName());

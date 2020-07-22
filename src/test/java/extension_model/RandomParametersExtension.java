@@ -18,6 +18,12 @@ import java.lang.reflect.Parameter;
  */
 public class RandomParametersExtension implements ParameterResolver {
 
+    private int maxValue = 500;
+
+    public RandomParametersExtension(int minValue) {
+        this.maxValue = minValue;
+    }
+
     /**
      * Example Annotation 추가
      */
@@ -40,7 +46,7 @@ public class RandomParametersExtension implements ParameterResolver {
         Class<?> type = parameter.getType();
         java.util.Random random = extensionContext.getRoot().getStore(ExtensionContext.Namespace.GLOBAL).getOrComputeIfAbsent(java.util.Random.class);
         if (int.class.equals(type)) {
-            return random.nextInt();
+            return random.nextInt(maxValue);
         }
         if (double.class.equals(type)) {
             return random.nextDouble();
